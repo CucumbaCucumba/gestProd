@@ -1,0 +1,32 @@
+<p>liste-produit works!</p>
+Mot clé<input type="text" [(ngModel)]=y>{{y}}
+<table border="1" *ngIf="products;else fat7i">
+    <tr>
+        <th>
+            <button (click)=toggleIMG()>{{nomButt}}</button>
+        </th>
+        <th>
+            id
+        </th>
+        <th>
+            nom
+        </th>
+        <th>
+            price
+        </th>
+        <th>
+            quanity
+        </th>
+    </tr>
+    <tr *ngFor="let a of productsF">
+        <td>
+            <img *ngIf="nomButt=='masquer'"[src]=a.urlImg width="50" height="50">
+        </td>
+        <td>{{a.id}}</td>
+        <td [ngStyle]="{'color':getColor(a.quantite)}">{{a.nom}}</td>
+        <td>{{a.prix}}</td>
+        <td>{{a.quantite}}</td>
+        
+    </tr>
+</table>
+<ng-template #fat7i><h2 style="color: red;">tableau vide</h2> </ng-template>
